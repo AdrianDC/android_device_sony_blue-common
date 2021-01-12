@@ -8,6 +8,10 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01700000
 # Kernel properties
 TARGET_KERNEL_SOURCE := kernel/sony/msm8x60
 
+# Kernel flags
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+
 # Custom boot
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := $(COMMON_PATH)/boot/custombootimg.mk
